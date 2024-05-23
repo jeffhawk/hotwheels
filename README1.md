@@ -1,4 +1,4 @@
-,## Nome: `Jefferson Eduardo SL`
+## Nome: `Jefferson Eduardo SL`
 
 Para executar este projeto:
 
