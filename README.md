@@ -1,3 +1,21 @@
+# Sistema de Gerenciamento de Carros HotWheels
+
+Este é um projeto de sistema de gerenciamento de carros HotWheels, desenvolvido como parte de um trabalho acadêmico.
+
+## Executando o Projeto
+
+Para executar o projeto, siga os passos abaixo:
+
+1. Clone o repositório para o seu computador:
+```
+git clone https://github.com/seu-usuario/nome-do-projeto.git
+```
+
+2. Navegue até o diretório do projeto:
+````
+cd nome-do-projeto
+````
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
