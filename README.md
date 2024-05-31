@@ -7,14 +7,56 @@ Este é um projeto de sistema de gerenciamento de carros HotWheels, desenvolvido
 Para executar o projeto, siga os passos abaixo:
 
 1. Clone o repositório para o seu computador:
-```
-### `git clone` https://github.com/seu-usuario/nome-do-projeto.git
-```
+    ```
+    git clone https://github.com/jeffhawk/hotwheels.git
+    ```
 
 2. Navegue até o diretório do projeto:
-````
-cd nome-do-projeto
-````
+    ````
+    cd hotwheels
+    ````
+
+3. Instale as dependências do projeto:
+
+    ***`npm install`***
+
+
+4. Execute o projeto:
+
+    ***`npm start`***
+
+
+O projeto será executado em `http://localhost:3000/`.
+
+## Componentes
+
+### CarList
+
+O componente `CarList` é responsável por exibir a lista de carros cadastrados. Ele recebe uma lista de carros como propriedade e utiliza o componente `CarItem` para exibir cada carro individualmente.
+
+### CarForm
+
+O componente `CarForm` é responsável por exibir o formulário de cadastro de um novo carro. Ele possui campos para inserir a marca, modelo e ano do carro, e um botão para adicionar o carro à lista.
+
+### NavBar
+
+O componente `NavBar` é responsável por exibir a barra de navegação com os links para as diferentes páginas da aplicação.
+
+...
+
+## Decisões de Desenvolvimento
+
+Durante o desenvolvimento deste projeto, optei por utilizar o React para a construção da interface do usuário devido à sua facilidade de uso e capacidade de criar interfaces interativas de forma eficiente. Para o gerenciamento do estado da aplicação, utilizei o useState e o useEffect para componentes funcionais, e o useContext e o useReducer para componentes que precisam compartilhar estado entre si.
+
+Além disso, utilizei o React Router para gerenciar as rotas da aplicação, permitindo a navegação entre as diferentes páginas de forma simples e intuitiva. Para estilizar os componentes, utilizei o CSS modules para garantir a modularidade e reutilização do código CSS.
+
+## Melhorias Futuras
+
+Para melhorar este projeto no futuro, pretendo adicionar funcionalidades como a edição e exclusão de carros, a adição de imagens aos carros e a implementação de testes automatizados para garantir a qualidade do código.
+
+
+
+
 
 # Getting Started with Create React App
 
