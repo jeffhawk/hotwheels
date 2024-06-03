@@ -23,7 +23,7 @@
   line-height: 1.5;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;

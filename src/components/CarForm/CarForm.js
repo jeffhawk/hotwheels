@@ -1,26 +1,52 @@
 // src/components/CarFormPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import carros from '../../Data/Carros'
+import './CarForm.module.css';
+import { Link } from 'react-router-dom';
 
-const CarForm = ({ onSubmit, car }) => {
-  const [formData, setFormData] = useState({
-    nome: car ? car.name : '',
-    model: car ? car.model : '',
-  });
+
+const CarForm = ({ onSubmit, carroParaEditar, onCancel }) => {
+  
+  const initialFormState = {
+    id: null,
+    nome: '',
+    marca: '',
+    cor: '',
+    ano: ''
+  };
+
+  useEffect(() => {
+    document.title = carroParaEditar ? `Editando.. ${carroParaEditar.nome} - HotWheels CRUD` : "Adicionar Carro - HotWheels CRUD";
+  }, [carroParaEditar]);
+
+  const [carro, setCarro] = useState(initialFormState);
+
+  useEffect(() => {
+    if (carroParaEditar) {
+      setCarro(carroParaEditar);
+    } else {
+      setCarro(initialFormState);
+    }
+  }, [carroParaEditar]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setCarro({ ...carro, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(carro);
+    setCarro(initialFormState);
   };
+
+  const handleCancelar = () => {
+    setCarro(initialFormState);
+  }
 
   return (
     <div className="container mt-5">
-      <h2>{car ? 'Editar Carro' : 'Adicionar Carro'}</h2>
+      <h2>{carroParaEditar ? 'Editar Carro' : 'Adicionar Carro'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="nome">Nome:</label>
@@ -29,19 +55,19 @@ const CarForm = ({ onSubmit, car }) => {
             className="form-control"
             id="nome"
             name="nome"
-            value={formData.name}
+            value={carro.nome}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="model">Modelo:</label>
+          <label htmlFor="marca">Marca:</label>
           <input
             type="text"
             className="form-control"
-            id="model"
-            name="model"
-            value={formData.model}
+            id="marca"
+            name="marca"
+            value={carro.marca}
             onChange={handleChange}
             required
           />
@@ -51,28 +77,34 @@ const CarForm = ({ onSubmit, car }) => {
           <input
             type="text"
             className="form-control"
-            id="model"
-            name="model"
-            value={formData.cor}
+            id="cor"
+            name="cor"
+            value={carro.cor}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="model">Modelo</label>
+          <label htmlFor="ano">Ano:</label>
           <input
             type="text"
             className="form-control"
-            id="model"
-            name="model"
-            value={formData.model}
+            id="ano"
+            name="ano"
+            value={carro.ano}
             onChange={handleChange}
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">{car ? 'Atualizar' : 'Adicionar'}</button>
+        <button type="submit" className="btn btn-primary">{carroParaEditar ? 'Atualizar' : 'Adicionar'}</button>
+        {carroParaEditar ? (
+          <Link to={"/carros"}><button type="button" className="btn btn-primary" onClick={onCancel} >Cancelar</button></Link>
+        ) : (
+          <Link to={"/"}><button type="button" className="btn btn-primary" onClick={onCancel}>Cancelar</button></Link>
+        )}
       </form>
     </div>
+    
   );
 };
 

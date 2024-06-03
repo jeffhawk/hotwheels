@@ -14,8 +14,6 @@ const NavBar = () => {
       <Link className={estilos.logo} to={"/"}>
           HotWheels
       </Link>
-      <div className={estilos.menu.icon} >
-      </div>
       <div>
         <ul>
           <li className="nav-item">
@@ -29,12 +27,12 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/cars" >
+            <Link className="nav-link" to="/carros" >
               <FontAwesomeIcon icon={faCar} /> Carros
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/add-car" >
+            <Link className="nav-link" to="/add-carro" >
               <FontAwesomeIcon icon={faAdd}/>  Adicionar Carro
             </Link>
           </li>
@@ -49,13 +47,13 @@ const NavBar = () => {
           <Link to="/about">Sobre</Link>
         </li>
         <li>
-          <Link to="/cars">Carros</Link>
+          <Link to="/carros">Carros</Link>
         </li>
         <li>
           <Link to="/add-car">Adicionar Carro</Link>
         </li>
         <li>
-          <Link to="/cars/:id">Detalhes do Carro</Link>
+          <Link to="/carros/:id">Detalhes do Carro</Link>
         </li>
       </ul>
     </nav> */}

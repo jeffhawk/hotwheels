@@ -10,15 +10,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={estilos.container} >
-      <h1 className={estilos.title}>HotWheels CRUD</h1>
-      <h2 className={estilos.description}>Bem-vindo ao sistema de gerenciamento de carros HotWheels!</h2>
-      <p className="lead">Gerencie sua coleção de carrinhos HotWheels de forma fácil e prática.</p>
-      <hr className="my-4" />
-      <p>Utilize o menu para navegar pelas funcionalidades da aplicação.</p>
-      <Link className="btn btn-primary btn-lg" to="/cars" role="button">Ver Lista de Carros</Link>
-      
-    </div>
+    <main>
+      <div className={estilos.container} >
+        <h1 className={estilos.title}>HotWheels CRUD</h1>
+        <h2 className={estilos.description}>Bem-vindo ao sistema de gerenciamento de carros HotWheels!</h2>
+        <p className="lead">Gerencie sua coleção de carrinhos HotWheels de forma fácil e prática.</p>
+        <hr className="my-4" />
+        <p>Utilize o menu para navegar pelas funcionalidades da aplicação.</p>
+        <Link className="btn btn-primary btn-lg" to="/carros" role="button">Ver Lista de Carros</Link>
+        
+      </div>
+    </main>
+    
   );
 };
 
