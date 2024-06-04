@@ -7,27 +7,52 @@ Primeira fase do projeto consiste em um CRUD utilizando React.
 
 ## Executando o Projeto
 
-Para executar o projeto, siga os passos abaixo:
+Para executar o projeto você pode seguir dois caminhos, o primeiro clonando o projeto direto do github ou se vc recebeu o arquivo .zip, siga os passos abaixo:
+- GITHUB:
+    1. Clone o repositório para o seu computador:
+        ```
+        git clone https://github.com/jeffhawk/hotwheels.git
+        ```
 
-1. Clone o repositório para o seu computador:
-    ```
-    git clone https://github.com/jeffhawk/hotwheels.git
-    ```
+    2. Navegue até o diretório do projeto:
+        ````
+        cd hotwheels
+        ````
 
-2. Navegue até o diretório do projeto:
-    ````
-    cd hotwheels
-    ````
+    3. Instale as dependências do projeto:
 
-3. Instale as dependências do projeto:
-
-    ***`npm install`***
+        ***`npm install`***
 
 
-4. Execute o projeto:
+    4. Execute o projeto:
 
-    ***`npm start`***
+        ***`npm start`***
 
+- Arquivo zip:
+    1. Descompacte o arquivo .zip em algum diretório no seu computador:
+        ```
+        botão direito do mouse em cima do arquivo: hotwheels.zip
+        ```
+        ![](/public/zip.png)
+
+    2. Navegue até o diretório do projeto:
+        ````
+        cd hotwheels
+            ou
+        duplo-clique na pasta hotwheels
+        ````
+
+    3. Instale as dependências do projeto:
+    
+        Digite: 
+        ***`npm install`***
+
+    4. Execute o projeto:
+        ````
+        Abra o terminal clicando com o botão direito do mouse:
+        ````
+        ![](/public/terminal.png)
+        Digite: ***`npm start`***
 
 O projeto será executado em `http://localhost:3000/`.
 
