@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CarForm.module.css';
 import { Link } from 'react-router-dom';
+import '../../App'
 
 
 const CarForm = ({ onSubmit, carroParaEditar, onCancel }) => {
@@ -25,7 +26,13 @@ const CarForm = ({ onSubmit, carroParaEditar, onCancel }) => {
     if (carroParaEditar) {
       setCarro(carroParaEditar);
     } else {
-      setCarro(initialFormState);
+      setCarro({
+        id: null,
+        nome: '',
+        marca: '',
+        cor: '',
+        ano: ''
+      });
     }
   }, [carroParaEditar]);
 
@@ -40,15 +47,12 @@ const CarForm = ({ onSubmit, carroParaEditar, onCancel }) => {
     setCarro(initialFormState);
   };
 
-  const handleCancelar = () => {
-    setCarro(initialFormState);
-  }
-
   return (
     <div className="container mt-5">
-      <h2>{carroParaEditar ? 'Editar Carro' : 'Adicionar Carro'}</h2>
+      {/* <h2>{carroParaEditar ? 'Editar Carro' : 'Adicionar Carro'}</h2> */}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
+          <h3>{carroParaEditar ? carroParaEditar.id : ""}</h3>
           <label htmlFor="nome">Nome:</label>
           <input
             type="text"
@@ -96,12 +100,24 @@ const CarForm = ({ onSubmit, carroParaEditar, onCancel }) => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">{carroParaEditar ? 'Atualizar' : 'Adicionar'}</button>
         {carroParaEditar ? (
-          <Link to={"/carros"}><button type="button" className="btn btn-primary" onClick={onCancel} >Cancelar</button></Link>
-        ) : (
-          <Link to={"/"}><button type="button" className="btn btn-primary" onClick={onCancel}>Cancelar</button></Link>
+          <>
+            <button type="submit" className="btn btn-primary">Atualizar</button>
+            <Link to={"/carros"}><button type="button" className="btn btn-primary" onClick={onCancel} >Cancelar</button></Link>
+          </>
+          
+        ) :(
+          <>
+            <button type="submit" className="btn btn-primary">Adicionar</button>
+            <Link to={"/"}><button type="button" className="btn btn-primary" onClick={onCancel}>Cancelar</button></Link>
+          </>
         )}
+        
+        {/* {carroParaEditar ? (
+          
+        ) : (
+          
+        )} */}
       </form>
     </div>
     

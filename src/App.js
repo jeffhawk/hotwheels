@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from './components/Home/Home'
 import CarList from './components/CarList/CarList';
 import CarForm from './components/CarForm/CarForm';
@@ -31,16 +31,19 @@ function App() {
   // };
 
   const handleAdicionaOuAtualizaCarro = (carro) => {
-    if (carro.id) {
+    if (carro.id || carro.id === 0) {
       setCarros(carros.map((c) => (c.id === carro.id ? carro : c)));
     } else {
       setCarros([...carros, { ...carro, id: carros.length + 1 }]);
     }
     setCarroParaEditar(null);
   };
-
+  // const carroAtual = [...carros].filter(car => car.id !== carro.id);
+  // const carrosAtual = [...carroAtual, carro];
+  // setCarros(carrosAtual);
 
   const handleEditCar = (carro) => {
+    // const car = carros.filter((c) => c.id === carro.id);
     setCarroParaEditar(carro);
   };
 
